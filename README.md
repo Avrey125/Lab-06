@@ -16,7 +16,7 @@ Number and name of feature: Locations
 
 Estimate of time needed to complete:1 hour
 
-Start time: 10:00 am
+Start time: 9/17/2019 10:00 am end 11:30 am
 
 Finish time: 
 
@@ -29,7 +29,7 @@ Number and name of feature: Weather
 
 Estimate of time needed to complete:1 hour
 
-Start time: 
+Start time: 9/17/2019 11:30 am 
 
 Finish time: 
 
