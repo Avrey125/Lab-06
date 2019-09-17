@@ -16,10 +16,11 @@ app.get('/location', (request, response) => {
   
 
     const location = new Location(searchQuery, geoDataResults);
-
     response.status(200).send(location);
+
   }
   catch(err){
+    response.status(500).send("Sorry, something went wrong")
     console.error(err);
   }
 });
