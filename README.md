@@ -1,52 +1,65 @@
 # Lab-06
+
 ## Feature 1
+
 Number and name of feature: Repository setup
 
-Estimate of time needed to complete:1 hour
+Estimate of time needed to complete: 1:00 hours
 
-Start time: 9:00 am
+Start time: Tue 9/17/19 9:00am
 
-Finish time: 10:00 am
+Tue 9/17/19
+  9:00am - 10:00am
 
-Actual time needed to complete: 1 hour
+Finish time: Tue 9/17/19 10:00am
+
+Actual time needed to complete: 1:00 hours
 
 ## Feature 2
 
 Number and name of feature: Locations
 
-Estimate of time needed to complete:1 hour
+Estimate of time needed to complete: 1:00 hours
 
-Start time: 10:00 am
+Start time: Tue 9/17/19 10:00am
 
-Finish time: 
+Tue 9/17/19
+  10:00am - 12:00pm
+  1:00pm - 1:30pm
 
-Actual time needed to complete:
+Finish time: Tue 9/17/19 1:30pm
 
+Actual time needed to complete: 2:30 hours
 
 ## Feature 3
 
 Number and name of feature: Weather
 
-Estimate of time needed to complete:1 hour
+Estimate of time needed to complete: 1:00 hours
 
-Start time: 
+Start time: Tue 9/17/19 12:30pm
 
-Finish time: 
+Tue 9/17/19
+  12:30pm - 1:30pm
 
-Actual time needed to complete:
+Finish time: Tue 9/17/19 1:30pm
 
+Actual time needed to complete: 1:00 hours
 
 ## Feature 3
 
 Number and name of feature: Errors
 
-Estimate of time needed to complete:1 hour
+Estimate of time needed to complete: 1:00 hours
 
-Start time: 
+Start time: Tue 9/17/19 1:00pm
 
-Finish time: 
+Tue 9/17/19
+  1:00pm - 1:30pm
 
-Actual time needed to complete:
+Finish time: Tue 9/17/19 1:30pm
+
+Actual time needed to complete: 0:30 hours
 
 **Author**: Avrey, Ethan
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
