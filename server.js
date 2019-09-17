@@ -104,10 +104,7 @@ app.get('/weather', (request, response) => {
 
       const time = `${weekday} ${month} ${date.getDate()}, ${date.getFullYear()}`;
 
-      return {
-        forecast: forecast,
-        time: time
-      };
+      return new Weather(forecast, time);
     });
 
     response.status(200).send(weathers);
