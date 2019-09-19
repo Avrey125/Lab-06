@@ -2,18 +2,22 @@
 'use strict';
 
 const express = require('express');
-const app = express();
-const cors = require('cors');
-const PORT = process.env.PORT || 3001;
+
 require('dotenv').config();
 
+const cors = require('cors');
 
 const superagent = require ('superagent');
 
+const app = express();
+
 app.use(express.static('public'));
 
-// Worst Policeman ever (everyone can use)
 app.use(cors());
+
+const PORT = process.env.PORT || 3001;
+
+
 
 // routes
 app.get('/location', searchLatToLong);
