@@ -65,14 +65,27 @@ function searchLatToLong (request, response){
   let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchQuery}&key=${process.env.GEOCODE_API_KEY}`;
 
   // asking superagent to make an API request to goole maps
+
+
+  //makes api call
   superagent.get(url)
   .then(superagentResults => {
     // if we are successful, we store the correct data in the variables we need
     let results = superagentResults.body.results[0];
+
     const formatted_address = results.formatted_address;
     const lat = results.geometry.location.lat;
     const long = results.geometry.location.lng;
 
+      
+    let sql = 'INSERT INTO locations (search_query, formatted_address, latitude, longitude) VALUES ($1 , $2, $3, $4);';
+
+    let value = [searchQuery, formatted_address, lat, long];
+    client.query(sql, value)
+    .then(pgResults => {
+      console.log('our pgResults', pgResults);
+      response.status(200).json(pgResults);
+    })
     // create a new location object instance using the superagent results
     const location = new Location(searchQuery, formatted_address, lat, long);
 
@@ -81,7 +94,14 @@ function searchLatToLong (request, response){
   })
   // if we fail, we end up here
   .catch(error => handleError(error, response));
+  }
+  
+function locationInfo(request, reponse) {
+  // INSERT INTO locations (search_query, formatted_address, latitude, longitude) VALUES ($1 , $2, $3, $4);
+  client.query()
 }
+
+
 
 // our error handler - sends the error to both the front and back end
 function handleError(error, response){
@@ -158,5 +178,5 @@ function Location(searchQuery, address, lat, long){
 
 // turns on the server
 
-// INSERT INTO locations (search_query, formatted_address, latitude, longitude) VALUES ($1 , $2, $3, $4);
+
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
