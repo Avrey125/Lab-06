@@ -1,19 +1,18 @@
 
 'use strict';
+// started with demo code 
 
-// express connect the server to the client
 const express = require('express');
-
-// dotenv connects our server to the .env
 require('dotenv').config();
+const pg = require('pg');
 
-// the policeman of the server
+
 const cors = require('cors');
 
-// connects our server to the APIs
+
 const superagent = require('superagent');
 
-// initalizing our express server
+
 const app = express();
 
 // index.html is going to be served from a public folder
@@ -24,6 +23,30 @@ app.use(cors());
 
 // declaring our PORT is 3000 from the .env OR 3000
 const PORT = process.env.PORT || 3001;
+
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
+client.on('error', err => console.error(err));
+// // routes
+// app.get('/', (request, response) => {
+//   response.status(200).sendStatus('Number 5 is alive!');
+// });
+// app.get('/add', (request, response) => {
+//   let firstName = request.query.first;
+//   let lastName = request.query.last;
+// })
+//save into database
+// let sql = 'INSERT INTO people (first_name, last_name) VALUES ($1, $2);';
+// let value = [firstName, lastName];
+// client.query(sql, value)
+//   .then(pgResults => {
+//     console.log('our pgResults', pgResults.rows);
+//     response.status(200).json(pgResults)
+//   })
+//   .catch(error => console.log('sql;error', error))
+
+
+
 
 // routes
 app.get('/location', searchLatToLong);
@@ -134,4 +157,6 @@ function Location(searchQuery, address, lat, long){
 }
 
 // turns on the server
+
+// INSERT INTO locations (search_query, formatted_address, latitude, longitude) VALUES ($1 , $2, $3, $4);
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
